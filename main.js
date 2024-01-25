@@ -11,7 +11,7 @@ let secdot = document.querySelector(".secdot");
 
 setInterval(function () {
   let h =
-    new Date().getHours() >= 12
+    new Date().getHours() > 12
       ? new Date().getHours() - 12
       : new Date().getHours();
   let m = new Date().getMinutes();
@@ -25,9 +25,9 @@ setInterval(function () {
   secdot.style.transform = `rotate(${s * 6}deg)`;
 
   hrprogress.style.strokeDashoffset = `${616 - (616 * h) / 12}`;
-  hrdot.style.transform = `rotate(${h * 30})`;
+  hrdot.style.transform = `rotate(${h * 30}deg)`;
 
-  if (h >= 12) {
+  if (h > 12) {
     h -= 12;
   } else {
     ap.textContent = "am";
